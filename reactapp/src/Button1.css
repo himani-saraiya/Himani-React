@@ -1,0 +1,27 @@
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .sm {
+    font-size: 14px;
+  }
+  
+  .md {
+    font-size: 16px;
+  }
+  
+  .lg {
+    font-size: 18px;
+  }
+  
+  .xl {
+    font-size: 20px;
+  }
+  
+  .loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
