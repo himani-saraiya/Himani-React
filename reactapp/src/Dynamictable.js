@@ -35,7 +35,6 @@ const Dynamictable = () => {
         valid = false;
       }
 
-      // Validate password
       if (field.name === 'password' && field.value.length < 6) {
         newField.error = 'Password must be at least 6 characters long';
         valid = false;
@@ -47,13 +46,9 @@ const Dynamictable = () => {
     setFormFields(newFormFields);
     return valid;
   };
-
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform validation before submitting
     if (validateForm()) {
-      // Do something with the form data, like submitting to a server
       console.log(formFields);
     }
   };
@@ -81,8 +76,6 @@ const Dynamictable = () => {
           ))}
         </tbody>
       </table>
-
-      {/* Submit button */}
       <button type="submit">Submit</button>
     </form>
   );
