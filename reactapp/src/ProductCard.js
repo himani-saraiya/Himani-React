@@ -1,27 +1,19 @@
-import React, { useState } from 'react';
-import './ProductCardStyle.css';
-const ProductCard = ({ imgUrl, title, price, onAddToCart }) => {
-  const [cartCount, setCartCount] = useState(0);
+import React from 'react'
 
-  const handleAddToCart = () => {
-    setCartCount((prevCount) => prevCount + 1);
-    if (typeof onAddToCart === 'function') {
-      onAddToCart();
-    }
-  };
-
+const ProductCard = ({imgUrl, title, price, productId, onAddToCart, isInCart}) => {
   return (
-    <div className="product-card">
-      <img src={imgUrl} alt={title} className="product-image" />
-      <div className="product-details">
-        <h3 className="product-title">{title}</h3>
-        <p className="product-price">${price}</p>
-        <button className="add-to-cart-button" onClick={handleAddToCart}>
-          Add to Cart ({cartCount})
-        </button>
-      </div>
-    </div>
-  );
-};
+    <div className='product-card'>
+      <img src={imgUrl} alt=""/>
+      <h4>{title}</h4>
+      <p>{price}</p>
+      {isInCart ?  
+      <button disabled>Added to Cart</button>:
+      <button onClick={()=>onAddToCart(productId)}>Add To Cart</button>
+      }
 
-export default ProductCard;
+    </div>
+    
+  )
+}
+
+export default ProductCard

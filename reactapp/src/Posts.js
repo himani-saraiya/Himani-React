@@ -5,6 +5,7 @@ import {useParams } from "react-router-dom";
 const Posts = () => {
   const { userId } = useParams();
   const [posts, setPosts] = useState([]);
+  const post=posts.posts
 
   useEffect(() => {
     fetchUserPosts(userId);
@@ -25,11 +26,14 @@ const Posts = () => {
   console.log(posts);
 
   return (
-    <div>
-      {posts.map((post) => {
+    <div className="main">
+      <div>
+      </div>
+      {post?.map((post) => {
         return (
-          <div>
-            <h2>{post.title}</h2>
+          <div className="card">
+            <h2>{post.id}</h2>
+            <h4>{post.title}</h4>
             <p>{post.body}</p>
             <hr />
           </div>
